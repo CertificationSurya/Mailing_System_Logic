@@ -1,0 +1,120 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "Krypton.Toolkit >= 85.24.8.239",
+      "MailKit >= 4.7.1.1",
+      "MimeKit >= 4.7.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\certi\\.nuget\\packages\\": {},
+    "D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+      "projectName": "Project_vz_Alpha",
+      "projectPath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+      "packagesPath": "C:\\Users\\certi\\.nuget\\packages\\",
+      "outputPath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\certi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[85.24.8.239, )"
+          },
+          "MailKit": {
+            "target": "Package",
+            "version": "[4.7.1.1, )"
+          },
+          "MimeKit": {
+            "target": "Package",
+            "version": "[4.7.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "Krypton.Toolkit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "MimeKit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "MailKit"
+    }
+  ]
+}

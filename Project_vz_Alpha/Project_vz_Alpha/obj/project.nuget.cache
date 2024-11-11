@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xp1cIHEky1k=",
+  "success": false,
+  "projectFilePath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "Krypton.Toolkit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "MimeKit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
+      "libraryId": "MailKit"
+    }
+  ]
+}
