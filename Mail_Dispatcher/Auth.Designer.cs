@@ -1,6 +1,6 @@
 ﻿namespace Mail_Dispatcher
 {
-    partial class Form1
+    partial class authForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            authBtn = new Button();
+            SuspendLayout();
+            // 
+            // authBtn
+            // 
+            authBtn.Location = new Point(307, 187);
+            authBtn.Name = "authBtn";
+            authBtn.Size = new Size(154, 38);
+            authBtn.TabIndex = 0;
+            authBtn.Text = "Auth";
+            authBtn.UseVisualStyleBackColor = true;
+            // 
+            // authForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(authBtn);
+            Name = "authForm";
+            Text = "Auth Window";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button authBtn;
     }
 }
