@@ -15,7 +15,17 @@ namespace Mail_Dispatcher
             // Dont forget to uncomment this jaba setUp Garxau
             //Task.Run(() => DBandSchemaManager.Instance.DbSetUp().Wait());
 
-            Application.Run(new authForm(new Output())); // suiii haneko
+            Dashboard dashboard = new Dashboard();
+            Output printer = new(); 
+
+            var authForm = new authForm(() => dashboard, printer);
+            // bichamaa yedi addition kam garnu parda on Auth Validation
+            //authForm.AuthenticationSuccessful += (sender, e) =>
+            //{
+            //};
+
+            //Application.Run(authForm); // suiii haneko
+            Application.Run(new Dashboard()); // temp
         }
     }
 }

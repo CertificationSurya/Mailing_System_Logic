@@ -14,16 +14,23 @@ namespace Mail_Dispatcher
     {
         private Output _printer; // var to store Output instance
 
+        // decoupling and dependency injection for dashboard window
+        private readonly Func<Dashboard> _dashboardFactory;
+        public event EventHandler AuthenticationSuccessful;
+
 
         private const string AppName = "mail-dispatcher"; // console.cloud.google ko app name
         private static readonly string[] Scopes = { "https://mail.google.com", // for full gmail access. send/receive and so.
             "https://www.googleapis.com/auth/userinfo.profile",
             "https://www.googleapis.com/auth/userinfo.email" };
 
-        public authForm(Output printer) // injection of hamro output dekhaunea/printer 
+        public authForm(Func<Dashboard> dashboardFactory, Output printer) // injection of hamro output dekhaunea/printer 
         {
             InitializeComponent();
             EventMapper();
+
+            // for dashboard
+            _dashboardFactory = dashboardFactory;
 
             var dbManager = DBandSchemaManager.Instance;
             _printer = printer; // assigning
@@ -42,6 +49,20 @@ namespace Mail_Dispatcher
 
                 // Data storage in DB
                 await StoreCredentialInDb();
+
+                // better approach
+                AuthenticationSuccessful?.Invoke(this, EventArgs.Empty);
+                this.Invoke((MethodInvoker)(() =>
+                {
+                    var dashboard = _dashboardFactory.Invoke();
+                    dashboard.Show();
+                }));
+
+                // lesser recommended approach
+                //Dashboard dashboard = new();
+                //dashboard.Show();
+
+                this.Hide();
             }
             catch (Exception)
             {
@@ -107,22 +128,11 @@ namespace Mail_Dispatcher
                 // Extract and store user details in CredentialManager
                 CredentialManager.Instance.Username = profile.Names?[0]?.DisplayName ?? "Anonymous";
                 CredentialManager.Instance.Email = profile.EmailAddresses?[0]?.Value ?? "Unknown";
-                CredentialManager.Instance.PhotoUrl = profile.Photos?[0]?.Url ?? @"\codeAndStuff\viva\Mail_Dispatcher\Mail_Dispatcher\default.jpg";
+
+                //Toaster.Instance.ShowNotification("photoo url",profile.Photos[0]?.Url.ToString());
+                CredentialManager.Instance.PhotoUrl = profile.Photos?[0]?.Url ?? Lib.defaultImgSrc;
                 // OR, if not img in device
                 //CredentialManager.Instance.PhotoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Slavery21.jpg/1280px-Slavery21.jpg";
-
-                // downloading userPhoto from url
-                if (CredentialManager.Instance.userPhoto == null)
-                {
-                    using (WebClient webClient = new WebClient())
-                    {
-                        byte[] imageData = await webClient.DownloadDataTaskAsync(CredentialManager.Instance.PhotoUrl);
-                        using (MemoryStream memoryStream = new MemoryStream(imageData))
-                        {
-                            CredentialManager.Instance.userPhoto = System.Drawing.Image.FromStream(memoryStream);
-                        }
-                    }
-                }
 
                 // Output the user information
                 //_printer.Consoler($"Name: {CredentialManager.Instance.Username} \nEmail: {CredentialManager.Instance.Email} \nPhoto URL: {CredentialManager.Instance.PhotoUrl}");
@@ -137,9 +147,8 @@ namespace Mail_Dispatcher
         }
 
 
-        // TODO:
         // store in db If not stored before.
-        private async Task StoreCredentialInDb()
+        private static async Task StoreCredentialInDb()
         {
             try
             {
@@ -151,12 +160,12 @@ namespace Mail_Dispatcher
                         Email = CredentialManager.Instance.Email,
                         PhotoUrl = CredentialManager.Instance.PhotoUrl,
                     });
-                    Toaster.Instance.ShowNotification("Account Created", "Created User Account Successfully !!!");
+                    Toaster.Instance.ShowNotification("Logged In", "Successfully Logged In !!!");
                 }
             }
             catch (Exception)
             {
-                Toaster.Instance.ShowNotification("Error: Account Creation", "Account Creation Failed !!!", NotificationType.Error);
+                Toaster.Instance.ShowNotification("Error: Logging Failed", "Couldn't Login, Try Again later-aligator !", NotificationType.Error);
                 throw;
             }
         }

@@ -4,6 +4,21 @@
     <Compile Update="Auth.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\ComposePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\GroupPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\InboxPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\SentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Output.cs">
       <SubType>Form</SubType>
     </Compile>
