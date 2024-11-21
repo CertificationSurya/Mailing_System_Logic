@@ -4,6 +4,9 @@ using Google.Apis.Auth.OAuth2; // OAuth2 signin/up
 //using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System.Net;
+using Microsoft.Data.SqlClient;
+using Dapper;
+using System.Text.Json;
 
 namespace Mail_Dispatcher
 {
@@ -22,6 +25,7 @@ namespace Mail_Dispatcher
             InitializeComponent();
             EventMapper();
 
+            var dbManager = DBandSchemaManager.Instance;
             _printer = printer; // assigning
         }
 
@@ -32,18 +36,16 @@ namespace Mail_Dispatcher
 
         private async void AuthHandler(object sender, EventArgs e)
         {
-            Toaster.ShowNotification("Success", "U");
-
             try {
                 await AuthenticateAsync();
                 await GatherUserInfo();
 
                 // Data storage in DB
-                //await StoreInDb();
+                await StoreCredentialInDb();
             }
             catch (Exception)
             {
-                Toaster.ShowNotification("Validation Error", "Can't validate the user login", NotificationType.Error);
+                Toaster.Instance.ShowNotification("Validation Error", "Can't validate the user login", NotificationType.Error);
                 //_printer.Consoler<string>("Error In Startup. Please leave a message to developer at: certification.surya@gmail.com");
                 this.Close();
                 throw;
@@ -81,7 +83,7 @@ namespace Mail_Dispatcher
             var credential = CredentialManager.Instance.credential;
             if (credential == null)
             {
-                Toaster.ShowNotification("Credential Error", "Invalid Credential or No Credential");
+                Toaster.Instance.ShowNotification("Credential Error", "Invalid Credential or No Credential");
                 //_printer.Consoler("No credentials found.");
                 return;
             }
@@ -125,16 +127,39 @@ namespace Mail_Dispatcher
                 // Output the user information
                 //_printer.Consoler($"Name: {CredentialManager.Instance.Username} \nEmail: {CredentialManager.Instance.Email} \nPhoto URL: {CredentialManager.Instance.PhotoUrl}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Handle API request failure
-                Toaster.ShowNotification("Error: User Info", "Can't Retrieve User Info", NotificationType.Error);
+                Toaster.Instance.ShowNotification("Error: User Info", "Can't Retrieve User Info", NotificationType.Error);
                 //_printer.Consoler($"Failed to retrieve user info: {ex.Message}");
                 CredentialManager.Instance.userPhoto = null;
             }
         }
 
+
+        // TODO:
         // store in db If not stored before.
+        private async Task StoreCredentialInDb()
+        {
+            try
+            {
+                using (SqlConnection connection = DBandSchemaManager.Instance.GetConnection())
+                {
+                    await connection.ExecuteAsync(Queries.User.CreateUser, new
+                    {
+                        Username = CredentialManager.Instance.Username,
+                        Email = CredentialManager.Instance.Email,
+                        PhotoUrl = CredentialManager.Instance.PhotoUrl,
+                    });
+                    Toaster.Instance.ShowNotification("Account Created", "Created User Account Successfully !!!");
+                }
+            }
+            catch (Exception)
+            {
+                Toaster.Instance.ShowNotification("Error: Account Creation", "Account Creation Failed !!!", NotificationType.Error);
+                throw;
+            }
+        }
 
     }
 }
