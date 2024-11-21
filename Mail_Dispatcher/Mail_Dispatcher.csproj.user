@@ -19,6 +19,18 @@
     <Compile Update="Navs\SentPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Navs\SubNavs\CreateGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\SubNavs\NothingDoneYet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\SubNavs\ViewGroupMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Navs\SubNavs\ViewMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Output.cs">
       <SubType>Form</SubType>
     </Compile>

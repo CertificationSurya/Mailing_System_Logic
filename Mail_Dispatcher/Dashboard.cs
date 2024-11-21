@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using Google.Apis.PeopleService.v1;
 using Mail_Dispatcher.Navs;
+using Mail_Dispatcher.Navs.SubNavs;
 
 namespace Mail_Dispatcher
 {
@@ -38,15 +39,17 @@ namespace Mail_Dispatcher
             inboxNav.Click += (sender, e) => Navigator(NavigationType.Inbox);
             sentNav.Click += (sender, e) => Navigator(NavigationType.Sent);
             composeNav.Click += (sender, e) => Navigator(NavigationType.Compose);
+            groupNav.Click += (sender, e) => Navigator(NavigationType.Group);
         }
 
         private async void Dashboard_Shown(object sender, EventArgs e)
         {
             await Setup();
-            loadLeftForm(new InboxPage());
+            loadLeftForm(new InboxPage(this));
+            loadRightForm(new NothingDoneYet());
         }
 
-        public void loadLeftForm(Form Form)
+        private void loadLeftForm(Form newForm)
         {
             // Remove existing controls in the panel
             if (this.mainpanel.Controls.Count > 0)
@@ -54,13 +57,26 @@ namespace Mail_Dispatcher
                 this.mainpanel.Controls.RemoveAt(0);
             }
 
-            Form newForm = Form as Form;
-
-            // Embed the form into the panel
-            newForm.TopLevel = true;
+            newForm.TopLevel = false;
             newForm.Dock = DockStyle.Fill;
-            //this.mainpanel.Controls.Add(newForm);
-            //this.mainpanel.Tag = newForm;
+            this.mainpanel.Controls.Add(newForm);
+            this.mainpanel.Tag = newForm;
+            newForm.Show();
+        }
+
+        private void loadRightForm(Form newForm)
+        {
+            // Remove existing controls in the panel
+            if (this.sidePanel.Controls.Count > 0)
+            {
+                this.sidePanel.Controls.RemoveAt(0);
+            }
+
+            newForm.TopLevel = false;
+            newForm.Dock = DockStyle.Fill;
+            this.sidePanel.Controls.Add(newForm);
+            this.sidePanel.Tag = newForm;
+
             newForm.Show();
         }
 
@@ -79,33 +95,52 @@ namespace Mail_Dispatcher
         }
 
         // Navigator
+
+        // leftFormNavigator
         private void Navigator(NavigationType navItem = NavigationType.Inbox)
         {
             switch (navItem)
             {
                 case NavigationType.Inbox:
-                    loadLeftForm(new InboxPage());
+                    loadLeftForm(new InboxPage(this));
                     break;
 
                 case NavigationType.Sent:
-                    loadLeftForm(new SentPage());
+                    loadLeftForm(new SentPage(this));
                     break;
 
                 case NavigationType.Compose:
-                    loadLeftForm(new ComposePage());
+                    loadLeftForm(new ComposePage(this));
                     break;
 
                 case NavigationType.Group:
-                    loadLeftForm(new GroupPage());
+                    loadLeftForm(new GroupPage(this));
                     break;
 
             }
 
         }
 
-        private void inboxNav_Click(object sender, EventArgs e)
+
+        // rightFormNavigator
+        public void rightNavigator(Lib.SideNavigationType sideNavType, int id =1)
         {
-            Navigator(NavigationType.Inbox);
+            switch (sideNavType)
+            {
+                case Lib.SideNavigationType.CreateGroup:
+                    loadRightForm(new CreateGroup());
+                    break;
+
+                case Lib.SideNavigationType.ViewMail:
+                    loadRightForm(new ViewMail(id));
+                    break;
+
+                case Lib.SideNavigationType.ViewMembers:
+                    loadRightForm(new ViewGroupMembers(id));
+                    break;
+            }
+
         }
+
     }
 }

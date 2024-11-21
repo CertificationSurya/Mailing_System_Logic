@@ -12,9 +12,11 @@ namespace Mail_Dispatcher.Navs
 {
     public partial class InboxPage : Form
     {
-        public InboxPage()
+        private readonly Dashboard _dashboard;
+        public InboxPage(Dashboard dashboard)
         {
             InitializeComponent();
+            _dashboard = dashboard;
         }
     }
 }

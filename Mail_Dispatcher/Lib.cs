@@ -4,6 +4,13 @@ namespace Mail_Dispatcher
 {
     public static class Lib
     {
+        public enum SideNavigationType
+        {
+            CreateGroup,
+            ViewMail,
+            ViewMembers
+        }
+
         public static string defaultImgSrc = @"\codeAndStuff\viva\Mail_Dispatcher\Mail_Dispatcher\default.jpg";
         public static async Task<Image> DownloadImage(string photoURL)
         {
