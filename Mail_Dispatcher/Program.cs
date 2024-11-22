@@ -13,7 +13,7 @@ namespace Mail_Dispatcher
             ApplicationConfiguration.Initialize();
 
             // Dont forget to uncomment this jaba setUp Garxau
-            Task.Run(() => DBandSchemaManager.Instance.DbSetUp().Wait());
+            //Task.Run(() => DBandSchemaManager.Instance.DbSetUp().Wait());
 
             Dashboard dashboard = new Dashboard();
             Output printer = new(); 
