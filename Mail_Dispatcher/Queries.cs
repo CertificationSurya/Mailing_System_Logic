@@ -8,24 +8,24 @@ namespace Mail_Dispatcher
         // user Related Queries
         public class User
         {
-        // Defining the queries as static constants
+            // Defining the queries as static constants
 
-        // sysobjects is the object holding all info about tables, views etc.
-        // xtype = "U" is user-defined Table
-        public static string CreateUsersTable = @"
+            // sysobjects is the object holding all info about tables, views etc.
+            // xtype = "U" is user-defined Table
+            public static string CreateUsersTable = @"
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'users' AND xtype = 'U')
             BEGIN
             CREATE TABLE users (
             id INT PRIMARY KEY IDENTITY(1,1),
-            username VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL UNIQUE,
-            photoUrl VARCHAR(255),
+            username NVARCHAR(255) NOT NULL,
+            email NVARCHAR(255) NOT NULL UNIQUE,
+            photoUrl NVARCHAR(255),
             groupJoined NVARCHAR(MAX) DEFAULT '[]'
-        );
+        );                                        
         END";
 
-        // if the email isnt register in hamro db, then only store
-        public static string CreateUser = @"
+            // if the email isnt register in hamro db, then only store
+            public static string CreateUser = @"
             IF NOT EXISTS (SELECT 1 FROM users WHERE email = @Email)
             BEGIN
                 INSERT INTO users (username, email, photoUrl)
@@ -39,24 +39,45 @@ namespace Mail_Dispatcher
         public class Group
         {
             // 'groups' is the reserve keyword in SQL and thus the []
-        public static string CreateGroupsTable = @"
+            public static string CreateGroupsTable = @"
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'groups' AND xtype = 'U')
             BEGIN
                 CREATE TABLE groups (
                     id INT PRIMARY KEY IDENTITY(1,1),
                     groupName NVARCHAR(100) NOT NULL,
-                    members NVARCHAR(MAX), -- Consider using JSON or normalize
-                    owner NVARCHAR(255) NOT NULL, -- Use NVARCHAR for consistency
-                    ownerId INT NOT NULL,
-                    createdAt DATETIME DEFAULT GETDATE(),
-
-                     -- Define the foreign key constraint
-                    CONSTRAINT ownerId FOREIGN KEY (ownerId)
-                    REFERENCES users(id)
-                    ON DELETE CASCADE
-                    ON UPDATE CASCADE
+                    membersId NVARCHAR(MAX), -- members ko id
+                    members NVARCHAR(MAX) DEFAULT '[]', -- members ko email haru
+                    memberCount INT DEFAULT 0,
+                    ownerEmail NVARCHAR(255) NOT NULL, -- Use NVARCHAR for consistency
+                    ownerId NVARCHAR(255) NOT NULL, -- Use NVARCHAR for consistency
+                    createdAt DATETIME DEFAULT GETDATE()
                 );
             END";
+
+            public static string CreateGroup = @"
+                INSERT INTO [groups] (groupName, membersId, members, memberCount, ownerEmail, ownerId, createdAt)
+                VALUES (
+                    @GroupName, 
+                    CONCAT('[', @OwnerId, ']'), -- Initialize membersId with the owner's ID
+                    CONCAT('["", @OwnerEmail, ""]'), -- Initialize members with the owner's email
+                    1, -- Start with 1 member(the owner)
+                    @OwnerEmail, 
+                    @OwnerId, 
+                    GETDATE()
+                );";
+
+
+            public static string ViewGroup = @"
+                SELECT 
+                    groupName, 
+                    ownerEmail, 
+                    memberCount, 
+                    createdAt
+                FROM 
+                    [groups]
+                WHERE 
+                    id = @GroupId;
+            ";
         }
 
 
@@ -64,23 +85,51 @@ namespace Mail_Dispatcher
         public class Mail
         {
 
-        public static string CreateMailsTable = @"
+            public static string CreateMailsTable = @"
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'mails' AND xtype = 'U')
             BEGIN
                 CREATE TABLE mails (
                     id INT PRIMARY KEY IDENTITY(1,1),
                     groupId NVARCHAR(MAX),
-                    senderEmail VARCHAR(255) NOT NULL,
-                    senderId INT NOT NULL,
-                    subject VARCHAR(255) NOT NULL,
-                    body VARCHAR(255) NOT NULL,
-                    createdAt DATETIME DEFAULT GETDATE(),
-
-                    CONSTRAINT senderId FOREIGN KEY (senderId)
-                    REFERENCES users(id)
+                    groupName NVARCHAR(255),
+                    senderEmail NVARCHAR(255) NOT NULL,
+                    senderId NVARCHAR(MAX), -- sender ko id
+                    subject NVARCHAR(255) NOT NULL,
+                    body NVARCHAR(MAX) NOT NULL,
+                    createdAt DATETIME DEFAULT GETDATE()
                 );
-            END
-        ";
+            END";
+
+
+            public static string CreateMail = @"
+                INSERT INTO [mails] (subject, body, groupId, groupName, senderId, senderEmail, createdAt)
+                VALUES (
+                    @Subject, 
+                    @Body, 
+                    @GroupId,
+                    @GroupName,
+                    @SenderId, 
+                    @SenderEmail, 
+                    GETDATE()
+                );";
+
+            public static string ViewMail = @"
+                SELECT 
+                    id,
+                    subject,
+                    body,
+                    groupId,
+                    groupName,
+                    senderEmail,
+                    senderId,
+                    createdAt
+                FROM 
+                    [mails]
+                WHERE 
+                    id = @MailId;
+            ";
+
+
 
         }
 
