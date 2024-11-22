@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Google.Apis.PeopleService.v1;
 using Mail_Dispatcher.Navs;
 using Mail_Dispatcher.Navs.SubNavs;
+using Org.BouncyCastle.Tls;
 
 namespace Mail_Dispatcher
 {
@@ -20,7 +21,6 @@ namespace Mail_Dispatcher
         {
             Inbox,
             Sent,
-            Compose,
             Group
         }
 
@@ -36,9 +36,18 @@ namespace Mail_Dispatcher
         // mapping event to method
         private void EventMapper()
         {
+            // user pic click
+            this.userPic.Click += new EventHandler(showUserInfo);
+
+            // nav
             inboxNav.Click += (sender, e) => Navigator(NavigationType.Inbox);
             sentNav.Click += (sender, e) => Navigator(NavigationType.Sent);
-            composeNav.Click += (sender, e) => Navigator(NavigationType.Compose);
+            composeNav.Click += (sender, e) =>
+            {
+                ComposePage myMailComposer  = new ComposePage(this);
+                myMailComposer.ShowDialog();
+                
+            };
             groupNav.Click += (sender, e) => Navigator(NavigationType.Group);
         }
 
@@ -56,6 +65,9 @@ namespace Mail_Dispatcher
             // initial left and right form
             loadLeftForm(new InboxPage(this));
             loadRightForm(new NothingDoneYet());
+
+            // test
+            //await Lib.SendEmailAsync(new string[]{"airobot911911@gmail.com"}, "Test", "Test");
         }
 
         private void loadLeftForm(Form newForm)
@@ -93,12 +105,10 @@ namespace Mail_Dispatcher
         // Setup
         private async Task Setup()
         {
-            if (CredentialManager.Instance.PhotoUrl != null)
-            {
+            if (CredentialManager.Instance.PhotoUrl != null) {
                 this.userPic.Image = await Lib.DownloadImage(CredentialManager.Instance.PhotoUrl);
             }
-            else
-            {
+            else {
                 this.userPic.ImageLocation = Lib.defaultImgSrc;
             }
         }
@@ -116,10 +126,6 @@ namespace Mail_Dispatcher
 
                 case NavigationType.Sent:
                     loadLeftForm(new SentPage(this));
-                    break;
-
-                case NavigationType.Compose:
-                    loadLeftForm(new ComposePage(this));
                     break;
 
                 case NavigationType.Group:
@@ -151,9 +157,23 @@ namespace Mail_Dispatcher
 
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
 
+
+        // show user info
+        private void showUserInfo(Object sender, EventArgs e)
+        {
+            UserInfo userInfo = new UserInfo();
+
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+
+            int midW = (w - this.Width) / 2;
+            int midH = (w - this.Height) / 2;
+
+            userInfo.Location = new Point(midW, midH);
+
+            userInfo.ShowDialog();
         }
+
     }
 }

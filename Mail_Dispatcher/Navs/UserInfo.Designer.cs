@@ -1,6 +1,6 @@
 ﻿namespace Mail_Dispatcher.Navs
 {
-    partial class ComposePage
+    partial class UserInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComposePage));
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInfo));
             cross = new Button();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(323, 196);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 15);
-            label1.TabIndex = 0;
-            label1.Text = "new email write";
             // 
             // cross
             // 
             cross.Image = (Image)resources.GetObject("cross.Image");
-            cross.Location = new Point(688, 12);
+            cross.Location = new Point(689, 9);
             cross.Name = "cross";
             cross.Size = new Size(100, 29);
-            cross.TabIndex = 1;
+            cross.TabIndex = 2;
             cross.UseVisualStyleBackColor = true;
             // 
-            // ComposePage
+            // UserInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(cross);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ComposePage";
-            Text = "ComposePage";
+            Name = "UserInfo";
+            Text = "UserInfo";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
         private Button cross;
     }
 }

@@ -40,6 +40,9 @@
     <Compile Update="Navs\SubNavs\ViewMail.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Navs\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Output.cs">
       <SubType>Form</SubType>
     </Compile>

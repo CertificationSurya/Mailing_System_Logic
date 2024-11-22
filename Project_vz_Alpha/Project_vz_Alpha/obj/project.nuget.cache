@@ -1,27 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Xp1cIHEky1k=",
-  "success": false,
-  "projectFilePath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
-      "libraryId": "Krypton.Toolkit"
-    },
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
-      "libraryId": "MimeKit"
-    },
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "The local source 'D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages' doesn't exist.",
-      "libraryId": "MailKit"
-    }
-  ]
+  "dgSpecHash": "qMfoXW+4+eU=",
+  "success": true,
+  "projectFilePath": "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\certi\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
+    "C:\\Users\\certi\\.nuget\\packages\\krypton.toolkit\\85.24.8.239\\krypton.toolkit.85.24.8.239.nupkg.sha512",
+    "C:\\Users\\certi\\.nuget\\packages\\mailkit\\4.7.1.1\\mailkit.4.7.1.1.nupkg.sha512",
+    "C:\\Users\\certi\\.nuget\\packages\\mimekit\\4.7.1\\mimekit.4.7.1.nupkg.sha512",
+    "C:\\Users\\certi\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
+    "C:\\Users\\certi\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.0\\system.security.cryptography.pkcs.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
 }

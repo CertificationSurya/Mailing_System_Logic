@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj": {}
+    "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj": {}
   },
   "projects": {
-    "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj": {
+    "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+        "projectUniqueName": "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
         "projectName": "Project_vz_Alpha",
-        "projectPath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
+        "projectPath": "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\Project_vz_Alpha.csproj",
         "packagesPath": "C:\\Users\\certi\\.nuget\\packages\\",
-        "outputPath": "D:\\codeAndStuff\\viva\\Mailing_System_Logic\\Project_vz_Alpha\\Project_vz_Alpha\\obj\\",
+        "outputPath": "D:\\codeAndStuff\\viva\\Mail_Dispatcher\\Project_vz_Alpha\\Project_vz_Alpha\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Programs\\visualStudio\\components,toolsAndSDK\\NuGetPackages"
@@ -82,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

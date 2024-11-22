@@ -113,7 +113,7 @@ namespace Mail_Dispatcher
                     GETDATE()
                 );";
 
-            public static string ViewMail = @"
+            public static string ViewSingleMail = @"
                 SELECT 
                     id,
                     subject,

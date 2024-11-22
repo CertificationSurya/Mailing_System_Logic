@@ -224,7 +224,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";
             Text = "Dashboard";
-            Load += Dashboard_Load;
+            Load += Dashboard_Shown;
             navContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)userPic).EndInit();
