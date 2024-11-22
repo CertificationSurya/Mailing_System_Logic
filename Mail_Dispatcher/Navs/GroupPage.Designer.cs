@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             groupText = new Label();
             createGroupNav = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            groupBox1 = new Components.GroupBox();
+            groupsPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // groupText
@@ -40,9 +40,9 @@
             groupText.AutoSize = true;
             groupText.BackColor = SystemColors.ButtonFace;
             groupText.Font = new Font("Sans Serif Collection", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupText.Location = new Point(1, 3);
+            groupText.Location = new Point(1, 2);
             groupText.Name = "groupText";
-            groupText.Size = new Size(105, 44);
+            groupText.Size = new Size(89, 37);
             groupText.TabIndex = 1;
             groupText.Text = "Group";
             // 
@@ -50,7 +50,7 @@
             // 
             createGroupNav.BackColor = SystemColors.ControlDark;
             createGroupNav.Cursor = Cursors.Hand;
-            createGroupNav.CustomizableEdges = customizableEdges1;
+            createGroupNav.CustomizableEdges = customizableEdges3;
             createGroupNav.DisabledState.BorderColor = Color.DarkGray;
             createGroupNav.DisabledState.CustomBorderColor = Color.DarkGray;
             createGroupNav.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -62,33 +62,33 @@
             createGroupNav.Font = new Font("Sans Serif Collection", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             createGroupNav.ForeColor = Color.Black;
             createGroupNav.ImageSize = new Size(30, 30);
-            createGroupNav.Location = new Point(254, -8);
-            createGroupNav.Margin = new Padding(3, 4, 3, 4);
+            createGroupNav.Location = new Point(222, -6);
             createGroupNav.Name = "createGroupNav";
-            createGroupNav.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            createGroupNav.Size = new Size(67, 40);
+            createGroupNav.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            createGroupNav.Size = new Size(59, 30);
             createGroupNav.TabIndex = 4;
             createGroupNav.Text = " +";
             createGroupNav.TextAlign = HorizontalAlignment.Right;
             // 
-            // groupBox1
+            // groupsPanel
             // 
-            groupBox1.Location = new Point(1, 84);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(385, 125);
-            groupBox1.TabIndex = 5;
+            groupsPanel.Dock = DockStyle.Bottom;
+            groupsPanel.Location = new Point(0, 68);
+            groupsPanel.Margin = new Padding(3, 3, 3, 10);
+            groupsPanel.Name = "groupsPanel";
+            groupsPanel.Size = new Size(279, 461);
+            groupsPanel.TabIndex = 5;
             // 
             // GroupPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(319, 705);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(279, 529);
+            Controls.Add(groupsPanel);
             Controls.Add(createGroupNav);
             Controls.Add(groupText);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "GroupPage";
             Text = "GroupPage";
             ResumeLayout(false);
@@ -99,6 +99,6 @@
 
         private Label groupText;
         private Guna.UI2.WinForms.Guna2GradientTileButton createGroupNav;
-        private Components.GroupBox groupBox1;
+        private FlowLayoutPanel groupsPanel;
     }
 }

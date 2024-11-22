@@ -29,8 +29,15 @@ namespace Mail_Dispatcher
             InitializeComponent();
             EventMapper();
 
+            // Temp: Prod ma remove hoi mitta
+            CredentialManager.Instance.UserId = 9;
+            CredentialManager.Instance.Username = "surya basnet";
+            CredentialManager.Instance.Email = "suryabasnet1011@gmail.com";
+            CredentialManager.Instance.PhotoUrl = @"https://lh3.googleusercontent.com/a/ACg8ocIpAh0BCpgZEAKcInabIt8xb3i9BBI8F8KHeOJL-vG0iXg4UA=s100";
+
+
             // download image only when the window visible xa natra no download
-            this.Shown += new EventHandler(Dashboard_Shown);
+            //this.Shown += new EventHandler(Dashboard_Shown);
         }
 
         // mapping event to method
@@ -63,8 +70,16 @@ namespace Mail_Dispatcher
 
 
             // initial left and right form
-            loadLeftForm(new InboxPage(this));
-            loadRightForm(new NothingDoneYet());
+            //loadLeftForm(new InboxPage(this));
+            //loadRightForm(new NothingDoneYet());
+
+
+            // Testing Purpose. delete on prod
+            loadLeftForm(new GroupPage(this));
+            loadRightForm(new CreateGroup());
+
+             //List<GroupDetails> groupDetails = await Lib.userJoinedGroups();
+
 
             // test
             //await Lib.SendEmailAsync(new string[]{"airobot911911@gmail.com"}, "Test", "Test");

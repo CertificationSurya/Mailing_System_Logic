@@ -13,6 +13,8 @@ namespace Mail_Dispatcher
         private static DBandSchemaManager _instance;
         private static readonly object _lock = new object();
 
+
+        private string _connectionString = @"Data Source=LUCIFER\SQLEXPRESS01;Initial Catalog=mail-dispatcher;Persist Security Info=True;User ID=sa;Password=test;Trust Server Certificate=True";
         private SqlConnection _connection;
 
         // Private constructor to prevent external instantiation
@@ -20,8 +22,8 @@ namespace Mail_Dispatcher
         {
             try
             {
-                string connectionString = @"Data Source=LUCIFER\SQLEXPRESS01;Initial Catalog=mail-dispatcher;Persist Security Info=True;User ID=sa;Password=test;Trust Server Certificate=True";
-                _connection = new SqlConnection(connectionString);
+                
+                _connection = new SqlConnection(_connectionString);
                 Toaster.Instance.ShowNotification("DB Connection", "Connection To Db Established Successfully !");
                 
             }
@@ -52,19 +54,28 @@ namespace Mail_Dispatcher
         // Method to get the connection
         public SqlConnection GetConnection()
         {
-            if (_connection.State != System.Data.ConnectionState.Open)
-            {
-                try
-                {
-                    _connection.Open();
-                }
-                catch (SqlException ex)
-                {
-                    Toaster.Instance.ShowNotification("Error: DB Connection", $"Failed to open connection: {ex.Message}", NotificationType.Error);
-                    throw;
-                }
+            try{
+                return new SqlConnection(_connectionString);
             }
-            return _connection;
+            catch (Exception){
+                Toaster.Instance.ShowNotification("Error: DB Connection", "Couldn't Connect to Database", NotificationType.Error);
+                throw;
+            }
+
+            // No singleTonBakwas
+            //if (_connection.State != System.Data.ConnectionState.Open)
+            //{
+            //    try
+            //    {
+            //        _connection.Open();
+            //    }
+            //    catch (SqlException ex)
+            //    {
+            //        Toaster.Instance.ShowNotification("Error: DB Connection", $"Failed to open connection: {ex.Message}", NotificationType.Error);
+            //        throw;
+            //    }
+            //}
+            //return _connection;
         }
 
 

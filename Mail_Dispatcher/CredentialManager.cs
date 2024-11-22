@@ -29,6 +29,7 @@ namespace Mail_Dispatcher
 
         // Example properties to hold credentials and user info
         public string Username { get; set; }
+        public int UserId { get; set; }
         public string Email { get; set; }
         public string PhotoUrl { get; set; }
         public System.Drawing.Image userPhoto { get; set; }

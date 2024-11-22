@@ -30,8 +30,28 @@ namespace Mail_Dispatcher.Navs
             int y = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
 
             this.Location = new Point(x, y);
+
+            Setup();
         }
 
+        private async void Setup()
+        {
+            if (CredentialManager.Instance.PhotoUrl != null)
+            {
+                this.userPic.Image = await Lib.DownloadImage(CredentialManager.Instance.PhotoUrl);
+            }
+            else
+            {
+                this.userPic.ImageLocation = Lib.defaultImgSrc;
+            }
 
+            this.username.Text = CredentialManager.Instance.Username;
+            this.userEmail.Text = CredentialManager.Instance.Email;
+        }
+
+        private void cross_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

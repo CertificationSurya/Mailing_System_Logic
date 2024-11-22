@@ -154,12 +154,21 @@ namespace Mail_Dispatcher
             {
                 using (SqlConnection connection = DBandSchemaManager.Instance.GetConnection())
                 {
-                    await connection.ExecuteAsync(Queries.User.CreateUser, new
+
+                    // temp test
+                    //CredentialManager.Instance.Username = "daf";
+                    //CredentialManager.Instance.Email = "daf@gmail.com";
+                    //CredentialManager.Instance.PhotoUrl= "heel.cpp";
+
+                    // prod
+                    int id = await connection.QuerySingleOrDefaultAsync<int>(Queries.User.CreateUserAndGetId, new
                     {
                         Username = CredentialManager.Instance.Username,
                         Email = CredentialManager.Instance.Email,
                         PhotoUrl = CredentialManager.Instance.PhotoUrl,
                     });
+
+                    CredentialManager.Instance.UserId = id;
                     Toaster.Instance.ShowNotification("Logged In", "Successfully Logged In !!!");
                 }
             }

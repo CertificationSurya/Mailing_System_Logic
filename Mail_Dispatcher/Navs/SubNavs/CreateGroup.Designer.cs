@@ -43,12 +43,11 @@
             // groupNameField
             // 
             groupNameField.BackColor = Color.FromArgb(221, 221, 221);
-            groupNameField.Location = new Point(171, 129);
-            groupNameField.Margin = new Padding(3, 4, 3, 4);
+            groupNameField.Location = new Point(150, 97);
             groupNameField.MaxLength = 20;
             groupNameField.Name = "groupNameField";
             groupNameField.PlaceholderText = "Group name";
-            groupNameField.Size = new Size(236, 27);
+            groupNameField.Size = new Size(207, 23);
             groupNameField.TabIndex = 0;
             // 
             // memberList
@@ -56,28 +55,28 @@
             memberList.AutoSize = true;
             memberList.BackColor = Color.FromArgb(221, 221, 221);
             memberList.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            memberList.Location = new Point(36, 167);
+            memberList.Location = new Point(32, 125);
             memberList.Name = "memberList";
-            memberList.Size = new Size(113, 20);
+            memberList.Size = new Size(88, 15);
             memberList.TabIndex = 3;
             memberList.Text = "Member gmail ";
             // 
             // memberListField
             // 
             memberListField.BackColor = Color.FromArgb(221, 221, 221);
-            memberListField.ForeColor = SystemColors.Info;
-            memberListField.Location = new Point(171, 164);
-            memberListField.Margin = new Padding(3, 4, 3, 4);
-            memberListField.MaxLength = 20;
+            memberListField.ForeColor = Color.DodgerBlue;
+            memberListField.Location = new Point(150, 123);
+            memberListField.MaxLength = 300;
             memberListField.Multiline = true;
             memberListField.Name = "memberListField";
             memberListField.PlaceholderText = "Comma Separated";
-            memberListField.Size = new Size(236, 371);
+            memberListField.Size = new Size(207, 279);
             memberListField.TabIndex = 2;
             // 
             // createGroupBtn
             // 
             createGroupBtn.BackColor = Color.FromArgb(199, 194, 220);
+            createGroupBtn.Cursor = Cursors.Hand;
             createGroupBtn.CustomizableEdges = customizableEdges1;
             createGroupBtn.DisabledState.BorderColor = Color.DarkGray;
             createGroupBtn.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -90,20 +89,20 @@
             createGroupBtn.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             createGroupBtn.ForeColor = Color.Black;
             createGroupBtn.ImageSize = new Size(10, 10);
-            createGroupBtn.Location = new Point(234, 543);
-            createGroupBtn.Margin = new Padding(3, 4, 3, 4);
+            createGroupBtn.Location = new Point(205, 407);
             createGroupBtn.Name = "createGroupBtn";
             createGroupBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            createGroupBtn.Size = new Size(108, 35);
+            createGroupBtn.Size = new Size(94, 26);
             createGroupBtn.TabIndex = 5;
             createGroupBtn.Text = "Create";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-36, -5);
+            pictureBox1.Location = new Point(-32, -4);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1347, 1046);
+            pictureBox1.Size = new Size(1179, 784);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -113,18 +112,18 @@
             name1.AutoSize = true;
             name1.BackColor = Color.FromArgb(221, 221, 221);
             name1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            name1.Location = new Point(36, 132);
+            name1.Location = new Point(32, 99);
             name1.Name = "name1";
-            name1.Size = new Size(47, 20);
+            name1.Size = new Size(37, 15);
             name1.TabIndex = 7;
             name1.Text = "name";
             // 
             // CreateGroup
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1200, 1102);
+            ClientSize = new Size(1050, 783);
             Controls.Add(name1);
             Controls.Add(createGroupBtn);
             Controls.Add(memberList);
@@ -132,7 +131,6 @@
             Controls.Add(groupNameField);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CreateGroup";
             Text = "CreateGroup";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

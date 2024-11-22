@@ -126,7 +126,7 @@
         gXAps/utF4/DJmJOEl5kkDWpfnBoyXxGSgcuai6dxkMMaAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="userPic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAkACQAAD/4QBKRXhpZgAATU0AKgAAAAgAAwEaAAUAAAABAAAAMgEbAAUAAAAB
         AAAAOgEoAAMAAAABAAIAAAAAAAAAkAAAAAEAAACQAAAAAQAA/9sAQwAGBAUGBQQGBgUGBwcGCAoQCgoJ
@@ -1749,7 +1749,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKMAAACsCAYAAAAXOhxVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAEZFJREFUeF7tnYl3FFUWh/mbhl1IegEUQoARDZuCuAEComELWwSHZWCYw3KQsCs6
+        vAAADrwBlbxySQAAEZFJREFUeF7tnYl3FFUWh/mbhl1IegEUQoARDZuCuAEComELWwSHZWCYw3KQsCs6
         goCMoggyBB1IUGeQsDnKkJCMrJFd2QQE39Svul8oKre6q6tre9X3d84nIQt2531dt2+929VtBIcTkrCM
         iub4kdti99ZrOvg4CmEZFcvphjtiwfhz4oVuJ1uBz29cfkmX89aNB+mfUCcso0K51HxPjO3bRIpIMXPE
         GV3Ouv03lZCTZVQkv//+u5g05EdSOrtAznULLuhyXmr+Lf0vhycsoyL5vu4GKVg+TNbkhpz7d10Xp07e
@@ -1830,7 +1830,7 @@
   <data name="guna2PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATYAAACTCAYAAAAEGjVAAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAExBJREFUeF7t3OmW5LaZhGHc/4WNPfaMZyzJ2rtb3erW0lqtfU36iyyABSKDIECC
+        vAAADrwBlbxySQAAExBJREFUeF7t3OmW5LaZhGHc/4WNPfaMZyzJ2rtb3erW0lqtfU36iyyABSKDIECC
         mSQz4pzX8vH/es5HVMmu0zRNO9gEm6Zph5tg0zTtcBNsmqYdboJN07TDTbBpmna4CTZN0w43waZp2uEm
         2DRNO9wEm6Zph5tg0zTtcBNsmqYdboJN07TDTbBpmna4CTZN0w43waZp2uEm2DRNO9wEm6Zph5tg0zTt
         cBNsmqYdboJN07TDTbBpmna4CTZN0w43waZp2uEm2DRNO9wEm6Zph5tg0zTtcBNsmqYdboJN07TDTbBp
@@ -1917,7 +1917,7 @@
   <data name="guna2PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARYAAADICAYAAAAtDs6kAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAFmhJREFUeF7t3Wmz7EaVhWH//x/W0NBNN5NnGw9gwGAGG8xguMVaVSmdra2dkjK1
+        vAAADrwBlbxySQAAFmhJREFUeF7t3Wmz7EaVhWH//x/W0NBNN5NnGw9gwGAGG8xguMVaVSmdra2dkjK1
         VdNZK+KNE7bPraoveiKle+71WydN07TkCRZN09InWDRNS59g0TQtfYJF07T0CRZN09InWDRNS59g0TQt
         fYJF07T0CRZN09InWDRNS59g0TQtfYJF07T0CRZN09InWDRNS59g0TQtfYJF07T0CRZN09InWDRNS59g
         0TQtfYJF07T0CRZN09InWDRNS59g0TQtfYJF07T0vfXm36eT7d/Z/Wu5fw19t63v/rm9f0b9Y6W/x/1j
