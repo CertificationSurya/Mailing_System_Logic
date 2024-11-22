@@ -95,7 +95,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(414, 577);
+            ClientSize = new Size(1000, 1000);
             Controls.Add(createGroupBtn);
             Controls.Add(memberList);
             Controls.Add(memberListField);

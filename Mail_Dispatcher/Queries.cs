@@ -47,11 +47,16 @@ namespace Mail_Dispatcher
                     groupName NVARCHAR(100) NOT NULL,
                     members NVARCHAR(MAX), -- Consider using JSON or normalize
                     owner NVARCHAR(255) NOT NULL, -- Use NVARCHAR for consistency
-                    createdAt DATETIME DEFAULT GETDATE()
+                    ownerId INT NOT NULL,
+                    createdAt DATETIME DEFAULT GETDATE(),
+
+                     -- Define the foreign key constraint
+                    CONSTRAINT ownerId FOREIGN KEY (ownerId)
+                    REFERENCES users(id)
+                    ON DELETE CASCADE
+                    ON UPDATE CASCADE
                 );
             END";
-
-
         }
 
 
@@ -66,9 +71,13 @@ namespace Mail_Dispatcher
                     id INT PRIMARY KEY IDENTITY(1,1),
                     groupId NVARCHAR(MAX),
                     senderEmail VARCHAR(255) NOT NULL,
+                    senderId INT NOT NULL,
                     subject VARCHAR(255) NOT NULL,
                     body VARCHAR(255) NOT NULL,
-                    createdAt DATETIME DEFAULT GETDATE()
+                    createdAt DATETIME DEFAULT GETDATE(),
+
+                    CONSTRAINT senderId FOREIGN KEY (senderId)
+                    REFERENCES users(id)
                 );
             END
         ";

@@ -36,10 +36,10 @@
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             userPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             navbar = new TableLayoutPanel();
-            groupNav = new PictureBox();
             composeNav = new PictureBox();
             sentNav = new PictureBox();
             inboxNav = new PictureBox();
+            groupNav = new PictureBox();
             imgContainer = new Guna.UI2.WinForms.Guna2CircleButton();
             mainpanel = new Panel();
             sidePanel = new Panel();
@@ -47,10 +47,10 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userPic).BeginInit();
             navbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)groupNav).BeginInit();
             ((System.ComponentModel.ISupportInitialize)composeNav).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sentNav).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inboxNav).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)groupNav).BeginInit();
             SuspendLayout();
             // 
             // navContainer
@@ -63,7 +63,7 @@
             navContainer.Dock = DockStyle.Left;
             navContainer.Location = new Point(0, 0);
             navContainer.Name = "navContainer";
-            navContainer.Size = new Size(114, 577);
+            navContainer.Size = new Size(114, 685);
             navContainer.TabIndex = 0;
             // 
             // guna2CirclePictureBox1
@@ -99,10 +99,10 @@
             navbar.CellBorderStyle = TableLayoutPanelCellBorderStyle.OutsetDouble;
             navbar.ColumnCount = 1;
             navbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            navbar.Controls.Add(groupNav, 0, 3);
-            navbar.Controls.Add(composeNav, 0, 2);
+            navbar.Controls.Add(composeNav, 0, 3);
             navbar.Controls.Add(sentNav, 0, 1);
             navbar.Controls.Add(inboxNav, 0, 0);
+            navbar.Controls.Add(groupNav, 0, 2);
             navbar.Location = new Point(0, 104);
             navbar.Name = "navbar";
             navbar.RowCount = 4;
@@ -113,25 +113,13 @@
             navbar.Size = new Size(110, 329);
             navbar.TabIndex = 1;
             // 
-            // groupNav
-            // 
-            groupNav.Anchor = AnchorStyles.None;
-            groupNav.BackColor = Color.Transparent;
-            groupNav.Cursor = Cursors.Hand;
-            groupNav.Image = (Image)resources.GetObject("groupNav.Image");
-            groupNav.Location = new Point(20, 251);
-            groupNav.Name = "groupNav";
-            groupNav.Size = new Size(69, 72);
-            groupNav.TabIndex = 4;
-            groupNav.TabStop = false;
-            // 
             // composeNav
             // 
             composeNav.Anchor = AnchorStyles.None;
             composeNav.BackColor = Color.Transparent;
             composeNav.Cursor = Cursors.Hand;
             composeNav.Image = (Image)resources.GetObject("composeNav.Image");
-            composeNav.Location = new Point(20, 170);
+            composeNav.Location = new Point(20, 251);
             composeNav.Name = "composeNav";
             composeNav.Size = new Size(69, 72);
             composeNav.TabIndex = 3;
@@ -162,6 +150,18 @@
             inboxNav.TabIndex = 1;
             inboxNav.TabStop = false;
             // 
+            // groupNav
+            // 
+            groupNav.Anchor = AnchorStyles.None;
+            groupNav.BackColor = Color.Transparent;
+            groupNav.Cursor = Cursors.Hand;
+            groupNav.Image = (Image)resources.GetObject("groupNav.Image");
+            groupNav.Location = new Point(20, 170);
+            groupNav.Name = "groupNav";
+            groupNav.Size = new Size(69, 72);
+            groupNav.TabIndex = 4;
+            groupNav.TabStop = false;
+            // 
             // imgContainer
             // 
             imgContainer.BackColor = SystemColors.Control;
@@ -188,24 +188,24 @@
             mainpanel.Dock = DockStyle.Left;
             mainpanel.Location = new Point(114, 0);
             mainpanel.Name = "mainpanel";
-            mainpanel.Size = new Size(270, 577);
+            mainpanel.Size = new Size(270, 685);
             mainpanel.TabIndex = 3;
             // 
             // sidePanel
             // 
             sidePanel.BackColor = Color.FromArgb(240, 244, 241);
             sidePanel.BorderStyle = BorderStyle.Fixed3D;
-            sidePanel.Dock = DockStyle.Right;
-            sidePanel.Location = new Point(386, 0);
+            sidePanel.Dock = DockStyle.Fill;
+            sidePanel.Location = new Point(384, 0);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(414, 577);
+            sidePanel.Size = new Size(670, 685);
             sidePanel.TabIndex = 0;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 577);
+            ClientSize = new Size(1054, 685);
             Controls.Add(sidePanel);
             Controls.Add(mainpanel);
             Controls.Add(navContainer);
@@ -215,10 +215,10 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)userPic).EndInit();
             navbar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)groupNav).EndInit();
             ((System.ComponentModel.ISupportInitialize)composeNav).EndInit();
             ((System.ComponentModel.ISupportInitialize)sentNav).EndInit();
             ((System.ComponentModel.ISupportInitialize)inboxNav).EndInit();
+            ((System.ComponentModel.ISupportInitialize)groupNav).EndInit();
             ResumeLayout(false);
         }
 

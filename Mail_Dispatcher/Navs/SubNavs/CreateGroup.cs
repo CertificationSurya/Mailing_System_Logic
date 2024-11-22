@@ -15,6 +15,19 @@ namespace Mail_Dispatcher.Navs.SubNavs
         public CreateGroup()
         {
             InitializeComponent();
+            EventMapper();
+        }
+
+        private void EventMapper()
+        {
+            createGroupBtn.Click += new EventHandler(CreateGroupAction);
+        }
+
+
+
+        private void CreateGroupAction(object sender, EventArgs e)
+        {
+
         }
     }
 }

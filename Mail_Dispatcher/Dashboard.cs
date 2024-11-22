@@ -45,6 +45,15 @@ namespace Mail_Dispatcher
         private async void Dashboard_Shown(object sender, EventArgs e)
         {
             await Setup();
+
+            // Full Screen Ko lagi
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location= new Point(0,0);
+            this.Size = new Size(w,h);
+
+
+            // initial left and right form
             loadLeftForm(new InboxPage(this));
             loadRightForm(new NothingDoneYet());
         }

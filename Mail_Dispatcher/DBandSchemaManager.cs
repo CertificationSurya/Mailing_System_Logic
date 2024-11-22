@@ -85,6 +85,7 @@ namespace Mail_Dispatcher
             }
             catch (Exception ex)
             {
+                MessageBox.Show("error");
                 Toaster.Instance.ShowNotification("Error: Table Creation", $"Error In Table Creation - Db Setup: {ex.Message}", NotificationType.Error);
                 throw;
             }
