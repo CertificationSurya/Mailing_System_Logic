@@ -29,24 +29,38 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            mailBox1 = new Components.MailBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(275, 169);
+            label1.Location = new Point(314, 225);
             label1.Name = "label1";
-            label1.Size = new Size(56, 15);
+            label1.Size = new Size(70, 20);
             label1.TabIndex = 0;
             label1.Text = "SentPage";
             // 
+            // mailBox1
+            // 
+            mailBox1.BackColor = SystemColors.ControlLightLight;
+            mailBox1.BorderStyle = BorderStyle.FixedSingle;
+            mailBox1.Location = new Point(0, 105);
+            mailBox1.Margin = new Padding(3, 4, 3, 4);
+            mailBox1.Name = "mailBox1";
+            mailBox1.Size = new Size(385, 125);
+            mailBox1.TabIndex = 2;
+            // 
             // SentPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(308, 913);
+            Controls.Add(mailBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SentPage";
             Text = "SentPage";
             ResumeLayout(false);
@@ -56,5 +70,6 @@
         #endregion
 
         private Label label1;
+        private Components.MailBox mailBox1;
     }
 }

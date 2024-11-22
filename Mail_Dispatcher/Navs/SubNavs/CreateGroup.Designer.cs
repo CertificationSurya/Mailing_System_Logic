@@ -30,80 +30,112 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateGroup));
             groupNameField = new TextBox();
-            groupName = new Label();
             memberList = new Label();
             memberListField = new TextBox();
             createGroupBtn = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            pictureBox1 = new PictureBox();
+            name1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupNameField
             // 
-            groupNameField.Location = new Point(153, 93);
+            groupNameField.BackColor = Color.FromArgb(221, 221, 221);
+            groupNameField.Location = new Point(171, 129);
+            groupNameField.Margin = new Padding(3, 4, 3, 4);
             groupNameField.MaxLength = 20;
             groupNameField.Name = "groupNameField";
             groupNameField.PlaceholderText = "Group name";
-            groupNameField.Size = new Size(180, 23);
+            groupNameField.Size = new Size(236, 27);
             groupNameField.TabIndex = 0;
-            // 
-            // groupName
-            // 
-            groupName.AutoSize = true;
-            groupName.Location = new Point(57, 97);
-            groupName.Name = "groupName";
-            groupName.Size = new Size(81, 15);
-            groupName.TabIndex = 1;
-            groupName.Text = "Group Name :";
             // 
             // memberList
             // 
             memberList.AutoSize = true;
-            memberList.Location = new Point(54, 136);
+            memberList.BackColor = Color.FromArgb(221, 221, 221);
+            memberList.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            memberList.Location = new Point(36, 167);
             memberList.Name = "memberList";
-            memberList.Size = new Size(92, 15);
+            memberList.Size = new Size(113, 20);
             memberList.TabIndex = 3;
-            memberList.Text = "Member Gmail :";
+            memberList.Text = "Member gmail ";
             // 
             // memberListField
             // 
-            memberListField.Location = new Point(153, 132);
+            memberListField.BackColor = Color.FromArgb(221, 221, 221);
+            memberListField.ForeColor = SystemColors.Info;
+            memberListField.Location = new Point(171, 164);
+            memberListField.Margin = new Padding(3, 4, 3, 4);
             memberListField.MaxLength = 20;
             memberListField.Multiline = true;
             memberListField.Name = "memberListField";
             memberListField.PlaceholderText = "Comma Separated";
-            memberListField.Size = new Size(180, 156);
+            memberListField.Size = new Size(236, 371);
             memberListField.TabIndex = 2;
             // 
             // createGroupBtn
             // 
+            createGroupBtn.BackColor = Color.FromArgb(199, 194, 220);
             createGroupBtn.CustomizableEdges = customizableEdges1;
             createGroupBtn.DisabledState.BorderColor = Color.DarkGray;
             createGroupBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             createGroupBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             createGroupBtn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             createGroupBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            createGroupBtn.FillColor = Color.FromArgb(199, 194, 220);
+            createGroupBtn.FillColor2 = Color.FromArgb(224, 224, 224);
+            createGroupBtn.FocusedColor = Color.Gray;
             createGroupBtn.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            createGroupBtn.ForeColor = Color.White;
-            createGroupBtn.Location = new Point(105, 361);
+            createGroupBtn.ForeColor = Color.Black;
+            createGroupBtn.ImageSize = new Size(10, 10);
+            createGroupBtn.Location = new Point(234, 543);
+            createGroupBtn.Margin = new Padding(3, 4, 3, 4);
             createGroupBtn.Name = "createGroupBtn";
             createGroupBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            createGroupBtn.Size = new Size(163, 36);
+            createGroupBtn.Size = new Size(108, 35);
             createGroupBtn.TabIndex = 5;
-            createGroupBtn.Text = "Create Group";
+            createGroupBtn.Text = "Create";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-36, -5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1347, 1046);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // name1
+            // 
+            name1.AutoSize = true;
+            name1.BackColor = Color.FromArgb(221, 221, 221);
+            name1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            name1.Location = new Point(36, 132);
+            name1.Name = "name1";
+            name1.Size = new Size(47, 20);
+            name1.TabIndex = 7;
+            name1.Text = "name";
             // 
             // CreateGroup
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 1000);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(1200, 1102);
+            Controls.Add(name1);
             Controls.Add(createGroupBtn);
             Controls.Add(memberList);
             Controls.Add(memberListField);
-            Controls.Add(groupName);
             Controls.Add(groupNameField);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CreateGroup";
             Text = "CreateGroup";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,9 +143,10 @@
         #endregion
 
         private TextBox groupNameField;
-        private Label groupName;
         private Label memberList;
         private TextBox memberListField;
         private Guna.UI2.WinForms.Guna2GradientTileButton createGroupBtn;
+        private PictureBox pictureBox1;
+        private Label name1;
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Mail_Dispatcher.Components
 {
-    public partial class MailBox : UserControl
+    public partial class SingleMail : UserControl
     {
-        public MailBox()
+        public SingleMail()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

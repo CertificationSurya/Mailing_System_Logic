@@ -49,8 +49,8 @@ namespace Mail_Dispatcher
             // Full Screen Ko lagi
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location= new Point(0,0);
-            this.Size = new Size(w,h);
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
 
 
             // initial left and right form
@@ -132,7 +132,7 @@ namespace Mail_Dispatcher
 
 
         // rightFormNavigator
-        public void rightNavigator(Lib.SideNavigationType sideNavType, int id =1)
+        public void rightNavigator(Lib.SideNavigationType sideNavType, int id = 1)
         {
             switch (sideNavType)
             {
@@ -151,5 +151,9 @@ namespace Mail_Dispatcher
 
         }
 
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

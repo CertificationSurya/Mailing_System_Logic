@@ -15,14 +15,19 @@ namespace Mail_Dispatcher.Navs
 
         private void EventMapper(object obj, System.EventArgs e)
         {
-            this.createGroupNav.Click += new EventHandler(OpenCreateGroup); 
-            this.createGroupNavIcon.Click += new EventHandler(OpenCreateGroup); 
+            this.createGroupNav.Click += new EventHandler(OpenCreateGroup);
         }
 
 
         // open Create Group Page
-        private void OpenCreateGroup(object obj, System.EventArgs e) {
+        private void OpenCreateGroup(object obj, System.EventArgs e)
+        {
             _dashboard.rightNavigator(Lib.SideNavigationType.CreateGroup);
+        }
+
+        private void createGroupNav_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
