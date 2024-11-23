@@ -130,7 +130,18 @@ namespace Mail_Dispatcher
                 WHERE 
                     id = @GroupId;
             ";
-            }
+
+            public static string GetMembersArrayByGroupName = @"
+                SELECT 
+                    members,
+                    id
+                FROM 
+                    [groups]
+                WHERE 
+                    groupName = @GroupName;
+            ";
+
+        }
 
 
             // Mail Related Query haru

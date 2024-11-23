@@ -36,9 +36,9 @@
             // 
             inboxText.AutoSize = true;
             inboxText.Font = new Font("Sans Serif Collection", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inboxText.Location = new Point(14, 12);
+            inboxText.Location = new Point(12, 9);
             inboxText.Name = "inboxText";
-            inboxText.Size = new Size(95, 44);
+            inboxText.Size = new Size(80, 37);
             inboxText.TabIndex = 0;
             inboxText.Text = "Inbox";
             // 
@@ -46,22 +46,20 @@
             // 
             mailBox1.BackColor = SystemColors.ControlLightLight;
             mailBox1.BorderStyle = BorderStyle.FixedSingle;
-            mailBox1.Location = new Point(0, 81);
-            mailBox1.Margin = new Padding(3, 4, 3, 4);
+            mailBox1.Location = new Point(0, 61);
             mailBox1.Name = "mailBox1";
-            mailBox1.Size = new Size(385, 125);
+            mailBox1.Size = new Size(277, 94);
             mailBox1.TabIndex = 1;
             // 
             // InboxPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(319, 705);
+            ClientSize = new Size(279, 529);
             Controls.Add(mailBox1);
             Controls.Add(inboxText);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "InboxPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inbox";

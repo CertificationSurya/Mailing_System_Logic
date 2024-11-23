@@ -24,8 +24,8 @@ namespace Mail_Dispatcher
             //{
             //};
 
-            //Application.Run(authForm); // suiii haneko
-            Application.Run(new Dashboard()); // test
+            Application.Run(authForm); // suiii haneko
+            //Application.Run(new Dashboard()); // test
         }
     }
 }

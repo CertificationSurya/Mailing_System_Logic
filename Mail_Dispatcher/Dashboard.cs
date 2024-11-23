@@ -70,13 +70,13 @@ namespace Mail_Dispatcher
 
 
             // initial left and right form
-            //loadLeftForm(new InboxPage(this));
-            //loadRightForm(new NothingDoneYet());
+            loadLeftForm(new InboxPage(this));
+            loadRightForm(new NothingDoneYet());
 
 
             // Testing Purpose. delete on prod
-            loadLeftForm(new GroupPage(this));
-            loadRightForm(new CreateGroup());
+            //loadLeftForm(new GroupPage(this));
+            //loadRightForm(new CreateGroup());
 
              //List<GroupDetails> groupDetails = await Lib.userJoinedGroups();
 
