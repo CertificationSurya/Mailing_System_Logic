@@ -147,7 +147,6 @@ namespace Mail_Dispatcher
             // Mail Related Query haru
             public class Mail
             {
-
                 public static string CreateMailsTable = @"
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'mails' AND xtype = 'U')
             BEGIN
@@ -176,7 +175,7 @@ namespace Mail_Dispatcher
                     GETDATE()
                 );";
 
-                public static string ViewSingleMail = @"
+                public static string GetAllUserSentMails = @"
                 SELECT 
                     id,
                     subject,
@@ -189,8 +188,8 @@ namespace Mail_Dispatcher
                 FROM 
                     [mails]
                 WHERE 
-                    id = @MailId;
-            ";
+                    senderId = @SenderId; ";
+
             }
 
         }

@@ -12,14 +12,15 @@ namespace Mail_Dispatcher.Components
 {
     public partial class MailBox : UserControl
     {
-        public MailBox()
+        public MailBox(MailDetails mail)
         {
             InitializeComponent();
+
+            this.groupLabel.Text = mail.GroupName;
+            this.subjectLabel.Text = mail.Subject;
+            this.senderLabel.Text = mail.SenderEmail;
+            this.createdAtLabel.Text = mail.CreatedAt.ToLocalTime().ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

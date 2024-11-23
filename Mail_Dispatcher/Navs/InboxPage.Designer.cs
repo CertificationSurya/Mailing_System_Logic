@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             inboxText = new Label();
-            mailBox1 = new Components.MailBox();
+            inboxPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // inboxText
@@ -42,14 +42,14 @@
             inboxText.TabIndex = 0;
             inboxText.Text = "Inbox";
             // 
-            // mailBox1
+            // inboxPanel
             // 
-            mailBox1.BackColor = SystemColors.ControlLightLight;
-            mailBox1.BorderStyle = BorderStyle.FixedSingle;
-            mailBox1.Location = new Point(0, 61);
-            mailBox1.Name = "mailBox1";
-            mailBox1.Size = new Size(277, 94);
-            mailBox1.TabIndex = 1;
+            inboxPanel.Dock = DockStyle.Bottom;
+            inboxPanel.Location = new Point(0, 56);
+            inboxPanel.Margin = new Padding(3, 3, 3, 10);
+            inboxPanel.Name = "inboxPanel";
+            inboxPanel.Size = new Size(279, 473);
+            inboxPanel.TabIndex = 6;
             // 
             // InboxPage
             // 
@@ -57,7 +57,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(279, 529);
-            Controls.Add(mailBox1);
+            Controls.Add(inboxPanel);
             Controls.Add(inboxText);
             FormBorderStyle = FormBorderStyle.None;
             Name = "InboxPage";
@@ -70,6 +70,6 @@
         #endregion
 
         private Label inboxText;
-        private Components.MailBox mailBox1;
+        private FlowLayoutPanel inboxPanel;
     }
 }

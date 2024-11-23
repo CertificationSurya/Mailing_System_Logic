@@ -74,7 +74,7 @@
             // 
             createdAtLabel.AutoSize = true;
             createdAtLabel.ForeColor = SystemColors.ControlDarkDark;
-            createdAtLabel.Location = new Point(227, 12);
+            createdAtLabel.Location = new Point(125, 10);
             createdAtLabel.Name = "createdAtLabel";
             createdAtLabel.Size = new Size(34, 15);
             createdAtLabel.TabIndex = 1;

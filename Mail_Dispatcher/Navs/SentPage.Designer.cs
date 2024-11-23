@@ -29,38 +29,47 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            mailBox1 = new Components.MailBox();
+            inboxText = new Label();
+            mailPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(314, 225);
+            label1.Location = new Point(275, 169);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
+            label1.Size = new Size(56, 15);
             label1.TabIndex = 0;
             label1.Text = "SentPage";
             // 
-            // mailBox1
+            // inboxText
             // 
-            mailBox1.BackColor = SystemColors.ControlLightLight;
-            mailBox1.BorderStyle = BorderStyle.FixedSingle;
-            mailBox1.Location = new Point(0, 105);
-            mailBox1.Margin = new Padding(3, 4, 3, 4);
-            mailBox1.Name = "mailBox1";
-            mailBox1.Size = new Size(385, 125);
-            mailBox1.TabIndex = 2;
+            inboxText.AutoSize = true;
+            inboxText.Font = new Font("Sans Serif Collection", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inboxText.Location = new Point(11, 12);
+            inboxText.Name = "inboxText";
+            inboxText.Size = new Size(137, 37);
+            inboxText.TabIndex = 3;
+            inboxText.Text = "Sent Mails";
+            // 
+            // mailPanel
+            // 
+            mailPanel.Location = new Point(-4, 72);
+            mailPanel.Margin = new Padding(3, 3, 3, 10);
+            mailPanel.Name = "mailPanel";
+            mailPanel.Size = new Size(279, 611);
+            mailPanel.TabIndex = 6;
             // 
             // SentPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(308, 913);
-            Controls.Add(mailBox1);
+            ClientSize = new Size(270, 685);
+            Controls.Add(mailPanel);
+            Controls.Add(inboxText);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "SentPage";
             Text = "SentPage";
             ResumeLayout(false);
@@ -70,6 +79,7 @@
         #endregion
 
         private Label label1;
-        private Components.MailBox mailBox1;
+        private Label inboxText;
+        private FlowLayoutPanel mailPanel;
     }
 }

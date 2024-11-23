@@ -55,7 +55,7 @@ namespace Mail_Dispatcher.Navs
             if (this.InvokeRequired)
             {
                 this.Invoke(new Action(populateItem));
-                return;
+                return; 
             }
 
             // Clear existing controls

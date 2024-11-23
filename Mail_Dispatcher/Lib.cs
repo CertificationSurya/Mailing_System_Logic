@@ -23,6 +23,19 @@ namespace Mail_Dispatcher
         public DateTime CreatedAt { get; set; }
     }
 
+    public class MailDetails
+    {
+        public int Id { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
+        public int GroupId { get; set; }
+        public string GroupName { get; set; }
+        public string SenderEmail { get; set; }
+        public int SenderId { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
+
+
 
     public static class Lib
     {
@@ -230,11 +243,6 @@ namespace Mail_Dispatcher
                     // Send the email
                     await smtpClient.SendAsync(message);
 
-
-                    // Saving Mail To Database
-
-
-
                     Toaster.Instance.ShowNotification("Success: Email Sent", $"Email has been sent to the {groupName}");
                 }
             }
@@ -246,7 +254,32 @@ namespace Mail_Dispatcher
         }
 
 
+        // get User Joined Group Details
+        public async static Task<List<MailDetails>> GetUserMails()
+        {
+            List<MailDetails> userSentMails = new List<MailDetails>();
 
+            using (SqlConnection connection = DBandSchemaManager.Instance.GetConnection())
+            {
+                try
+                {
+                    // Fetch all sent mails for the current user
+                    var sentMails = await connection.QueryAsync<MailDetails>(
+                        Queries.Mail.GetAllUserSentMails,
+                        new { SenderId = CredentialManager.Instance.UserId });
+
+                    // Convert the result to a list
+                    userSentMails = sentMails.ToList();
+                }
+                catch (Exception ex)
+                {
+                    Toaster.Instance.ShowNotification("Error: Fetching Mails", "Couldn't Get User Sent Mails", NotificationType.Error);
+                }
+            }
+
+            // Return the results
+            return userSentMails;
+        }
 
 
     }
