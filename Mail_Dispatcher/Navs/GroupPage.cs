@@ -13,7 +13,7 @@ namespace Mail_Dispatcher.Navs
             _dashboard = dashboard;
             InitializeComponent();
 
-            Task.Run(() => JoinedGroupDetails()).Wait();
+            //Task.Run(() => JoinedGroupDetails()).Wait();
             this.Shown += new EventHandler(EventMapper);
         }
 
