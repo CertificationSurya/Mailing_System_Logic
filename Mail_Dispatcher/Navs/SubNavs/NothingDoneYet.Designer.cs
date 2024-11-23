@@ -39,8 +39,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-3, -1);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1458, 982);
+            pictureBox1.Size = new Size(1276, 736);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -48,7 +49,8 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(391, 69);
+            pictureBox2.Location = new Point(342, 52);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(630, 725);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -57,16 +59,15 @@
             // 
             // NothingDoneYet
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1454, 993);
+            ClientSize = new Size(1138, 745);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             ForeColor = Color.Blue;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "NothingDoneYet";
             Text = "NothingDoneYet";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

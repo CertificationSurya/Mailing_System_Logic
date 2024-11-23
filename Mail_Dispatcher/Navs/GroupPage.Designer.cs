@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             groupText = new Label();
             createGroupNav = new Guna.UI2.WinForms.Guna2GradientTileButton();
             groupsPanel = new FlowLayoutPanel();
@@ -50,7 +50,7 @@
             // 
             createGroupNav.BackColor = SystemColors.ControlDark;
             createGroupNav.Cursor = Cursors.Hand;
-            createGroupNav.CustomizableEdges = customizableEdges3;
+            createGroupNav.CustomizableEdges = customizableEdges1;
             createGroupNav.DisabledState.BorderColor = Color.DarkGray;
             createGroupNav.DisabledState.CustomBorderColor = Color.DarkGray;
             createGroupNav.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -64,7 +64,7 @@
             createGroupNav.ImageSize = new Size(30, 30);
             createGroupNav.Location = new Point(222, -6);
             createGroupNav.Name = "createGroupNav";
-            createGroupNav.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            createGroupNav.ShadowDecoration.CustomizableEdges = customizableEdges2;
             createGroupNav.Size = new Size(59, 30);
             createGroupNav.TabIndex = 4;
             createGroupNav.Text = " +";
@@ -72,11 +72,10 @@
             // 
             // groupsPanel
             // 
-            groupsPanel.Dock = DockStyle.Bottom;
-            groupsPanel.Location = new Point(0, 68);
+            groupsPanel.Location = new Point(0, 60);
             groupsPanel.Margin = new Padding(3, 3, 3, 10);
             groupsPanel.Name = "groupsPanel";
-            groupsPanel.Size = new Size(279, 461);
+            groupsPanel.Size = new Size(279, 469);
             groupsPanel.TabIndex = 5;
             // 
             // GroupPage

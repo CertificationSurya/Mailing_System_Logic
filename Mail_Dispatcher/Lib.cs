@@ -17,6 +17,7 @@ namespace Mail_Dispatcher
     public class GroupDetails
     {
         public string GroupName { get; set; }
+        public int GroupId { get; set; }
         public int MemberCount { get; set; }
         public string OwnerEmail { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -148,8 +149,9 @@ namespace Mail_Dispatcher
                         try
                         {
                             GroupDetails groupDetails = await GetGroupDetails(groupId);
-                            if (groupDetails != null)
-                            {
+                            if (groupDetails != null) {
+                                // also add groupId
+                                groupDetails.GroupId = groupId;
                                 userJoinedGroupDetails.Add(groupDetails);
                             }
 

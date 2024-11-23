@@ -101,6 +101,7 @@
             Controls.Add(ownerName);
             Controls.Add(groupName);
             Controls.Add(guna2CirclePictureBox1);
+            Cursor = Cursors.Hand;
             Margin = new Padding(3, 2, 3, 2);
             Name = "GroupBox";
             Size = new Size(268, 74);

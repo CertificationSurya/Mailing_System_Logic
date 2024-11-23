@@ -19,5 +19,10 @@ namespace Mail_Dispatcher.Navs.SubNavs
             // db to view group members
             Console.WriteLine(id);
         }
+
+        private void cross_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ViewGroupMembers";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewGroupMembers));
+            cross = new Button();
+            SuspendLayout();
+            // 
+            // cross
+            // 
+            cross.BackColor = SystemColors.ControlLightLight;
+            cross.Image = (Image)resources.GetObject("cross.Image");
+            cross.Location = new Point(528, 12);
+            cross.Name = "cross";
+            cross.Size = new Size(38, 29);
+            cross.TabIndex = 2;
+            cross.UseVisualStyleBackColor = false;
+            cross.Click += cross_Click;
+            // 
+            // ViewGroupMembers
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(578, 697);
+            Controls.Add(cross);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ViewGroupMembers";
+            Text = "ViewGroupMembers";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button cross;
     }
 }
